@@ -4,6 +4,7 @@
 docker-compose up -d --build
 ```
 ## SQL
+Приложен файл PG DUMP (avito)
 ```
 DROP TABLE IF EXISTS userss;
 DROP TABLE IF EXISTS segmentlist;
