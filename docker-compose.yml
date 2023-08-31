@@ -14,7 +14,9 @@ services:
       - postgres-db:/var/lib/postgresql/data
   server:
     container_name: server
-    image: serverimage
+    #image: serverimage
+    build:
+      context: .
     ports:
       - "8080:8080"
     depends_on:
