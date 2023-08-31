@@ -3,10 +3,7 @@ package main
 import (
 	"database/sql"
 	"fmt"
-	"github.com/lib/pq"
 	"log"
-	"strconv"
-	"strings"
 )
 
 func Connect() *sql.DB {
@@ -25,31 +22,6 @@ func InitDB(db *sql.DB) {
 	db.Exec("CREATE TABLE segmentlist (segment_id serial primary key , slug varchar(128))")
 }
 
-func ArrayToPQ(array pq.Int32Array) string {
-	str := ""
-	for _, el := range array {
-		str += strconv.Itoa(int(el)) + ","
-	}
-	return str[:len(str)-1]
-}
-
-func Int32ArrayToPQ(array []int32) pq.Int32Array {
-	var res pq.Int32Array
-	for _, el := range array {
-		res = append(res, el)
-	}
-	return res
-}
-
 func First(a int, er error) int {
 	return a
-}
-
-func PQtoArray(str string) []int32 {
-	splitted := strings.Split(str, ",")
-	var res []int32
-	for _, el := range splitted {
-		res = append(res, int32(First(strconv.Atoi(el))))
-	}
-	return res
 }
