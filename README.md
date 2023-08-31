@@ -21,6 +21,13 @@ CREATE TABLE segmentlist (segment_id serial primary key , slug varchar(128));
 ```
 127.0.0.1:8080/addUserToSegment
 ```
+```json
+{
+    "UserID": 9,
+    "SlugsToAdd": [1,2],
+    "SlugsToDelete": [3]
+}
+```
 
 Получить всех юзеров (GET) - добавил для удобства
 ```
