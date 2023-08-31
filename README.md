@@ -1,4 +1,10 @@
 # avito-segmenting
+## Стек
+Go 1.21 \
+PostgreSQL 15 \
+Gin \
+github.com/lib/pq 
+
 ## Запуск
 ```
 docker-compose up -d --build
